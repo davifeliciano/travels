@@ -1,11 +1,11 @@
 import httpStatus from "http-status";
 import PassengerServices from "../services/passenger.services.js";
 
-export async function countTravelsOfPassengers(req, res) {
+export async function getTravelsCountController(req, res) {
   const { page } = res.locals.query;
 
   try {
-    const travelsCount = await PassengerServices.countTravelsOfPassengers(page);
+    const travelsCount = await PassengerServices.getTravelsCount(page);
 
     if (travelsCount.length > 100) {
       return res

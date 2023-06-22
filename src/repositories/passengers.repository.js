@@ -1,7 +1,7 @@
 import connection from "../database/database.js";
 
 class PassengerRepository {
-  static async countTravelsOfPassengers() {
+  static async getTravelsCount() {
     const text = `
       SELECT
         p."fullName" AS passenger,
@@ -21,7 +21,7 @@ class PassengerRepository {
     return rows;
   }
 
-  static async getTravelsPage(page) {
+  static async getTravelsCountPage(page) {
     const limit = 25;
     const offset = (page - 1) * limit;
 
